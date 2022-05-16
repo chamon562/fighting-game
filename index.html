@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>fighting game</title>
+  </head>
+  <body>
+    <!-- this div will be our container div that wraps around our entire canvas-->
+    <div style="position: relative; display: inline-block">
+      <!-- smaller child div -->
+      <div
+        style="
+          position: absolute;
+          display: flex;
+          padding: 20px;
+          width: 100%;
+          align-items: center;
+        "
+      >
+        <!-- this is the div for the health bar -->
+        <div
+          style="
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            border: 4px solid #fff;
+            border-radius: 10px;
+          "
+        >
+          <div
+            style="
+              background-color: red;
+              height: 30px;
+              width: 100%;
+              border-radius: 5px;
+            "
+          ></div>
+          <div
+            id="playerHP"
+            style="
+              position: absolute;
+              background: rgb(51, 240, 2);
+              background: linear-gradient(
+                90deg,
+                rgba(51, 240, 2, 1) 0%,
+                rgba(255, 187, 0, 1) 51%,
+                rgba(233, 244, 25, 1) 100%
+              );
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+            "
+          >
+            <!-- player health -->
+          </div>
+        </div>
+        <!-- when you dont want a child element within a parent with a display of flex to shrink then
+        select the element you dont want to shrink and then add in the style called flex-shrink: 0  -->
+        <div
+          style="
+            background-color: transparent;
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <h1 id="timer"></h1>
+          <!-- timer -->
+        </div>
+        <div
+          style="
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            border: 4px solid #fff;
+          "
+        >
+          <div style="background-color: red; height: 30px; border-radius: 5px">
+            <!-- enemy health -->
+          </div>
+          <div
+            id="enemyHP"
+            style="
+              position: absolute;
+              background: rgb(233, 244, 25);
+              background: linear-gradient(
+                90deg,
+                rgba(233, 244, 25, 1) 0%,
+                rgba(255, 187, 0, 1) 51%,
+                rgba(51, 240, 2, 1) 100%
+              );
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+            "
+          ></div>
+        </div>
+        <div></div>
+      </div>
+      <div
+        id="matchResult"
+        style="
+          position: absolute;
+          color: white;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: none;
+        "
+      >
+        DRAW GAME
+      </div>
+      <canvas></canvas>
+    </div>
+    <!-- import gsap into project find where decreasing health in app.js doing the query Selector for enemyHealth 
+      gives the animation of the gradually decreasing.
+    -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+      integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
