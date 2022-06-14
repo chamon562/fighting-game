@@ -22,6 +22,7 @@ class Sprite {
     this.offset = offset;
   }
   draw() {
+    
     ctx.drawImage(
       this.image,
       this.framesCurrent * (this.image.width / this.framesMax),
@@ -313,6 +314,12 @@ class Fighter extends Sprite {
         this.framesMax = this.sprites.death.framesMax;
         this.framesCurrent = 0;
       }
+    } else if (sprite === "exploder"){
+      this.image = this.sprites.exploder.image;
+      this.framesMax = this.sprites.exploder.framesMax;
+      this.framesCurrent = 0;
+      this.scale = 5
+
     }
   }
 }

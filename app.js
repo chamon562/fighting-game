@@ -153,6 +153,7 @@ const keys = {
 // console.log(keys);
 
 decreaseTimer();
+
 function animate() {
   window.requestAnimationFrame(animate);
   //   black background
